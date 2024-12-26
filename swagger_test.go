@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/swaggo/swag"
+	"github.com/swaggo/swag/v2"
 )
 
 type mockedSwag struct{}
@@ -390,7 +390,7 @@ func TestUIConfigOptions(t *testing.T) {
 				DefaultModelsExpandDepth: ShowModel,
 			},
 			exp: `window.onload = function() {
-  
+
   const ui = SwaggerUIBundle({
     url: "doc.json",
     deepLinking:  true ,
@@ -406,7 +406,7 @@ func TestUIConfigOptions(t *testing.T) {
       SwaggerUIBundle.plugins.DownloadUrl
     ],
     layout: "StandaloneLayout",
-    defaultModelsExpandDepth:  1 
+    defaultModelsExpandDepth:  1
   })
 
   window.ui = ui
@@ -445,7 +445,7 @@ func TestUIConfigOptions(t *testing.T) {
     // Some plugin
   });
 
-  
+
   const ui = SwaggerUIBundle({
     url: "swagger.json",
     deepLinking:  false ,
@@ -466,7 +466,7 @@ func TestUIConfigOptions(t *testing.T) {
     onComplete: () => { window.ui.setBasePath('v3'); },
     showExtensions: true,
     layout: "StandaloneLayout",
-    defaultModelsExpandDepth:  -1 
+    defaultModelsExpandDepth:  -1
   })
 
   window.ui = ui
